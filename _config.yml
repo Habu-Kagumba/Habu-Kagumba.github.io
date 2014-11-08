@@ -1,0 +1,17 @@
+timezone: Africa/Nairobi
+
+# Permalinks
+permalink:        pretty
+relative_permalinks: true
+
+# Setup
+title:            HS - Develop &amp; Design
+tagline:          Develop + Design
+url:              http://hs-dev-design.com
+paginate:         1
+baseurl:          /
+author:
+  name:           Herbert Kagumba
+  url:            http://hs-dev-design.com
+  email:          hs@hs-dev-design.com
+
