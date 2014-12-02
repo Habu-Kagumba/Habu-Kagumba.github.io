@@ -1,21 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="">
 
-  {% include head.html %}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        {% if page.title %} {{ page.title }} • {% endif %} {{ site.title }}
+    </title>
+    {% if page.excerpt %}
+    <meta name="description" content="{{ page.excerpt | strip_html }}"> {% endif %} {% if page.tags %}
+    <meta name="keywords" content="{{ page.tags | join: ', ' }}"> {% endif %} {% if page.author %} {% assign author = site.data.authors[page.author] %} {% else %} {% assign author = site.owner %} {% endif %} {% include open-graph.html %} {% if author.google.plus %}
+    <link rel="author" href="https://plus.google.com/{{ author.google.plus }}" /> {% endif %}
 
-  <body>
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
+    <link href="{{ site.url }}/sitemap.xml" type="application/xml" rel="sitemap" title="Sitemap">
 
-    <div class="container content">
-      <header class="masthead">
-        <h3 class="masthead-title">
-          <img src="{{ site.baseurl }}public/logo.svg" alt="HS - Devlop &amp; Design logo">
-        </h3>
-      </header>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
 
-      <main>
-        {{ content }}
-      </main>
-    </div>
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ site.baseurl }}assets/css/main.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}public/assets/css/vendor/normalize.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700' rel='stylesheet' type='text/css'>
+    <!-- <link rel="stylesheet" href="{{ site.baseurl }}assets/css/syntax.css"> -->
 
-  </body>
+    <!-- Opera Speed Dial Favicon -->
+    <link rel="icon" type="image/png" href="{{ site.baseurl }}favicon.png" />
+    <!-- Standard Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ site.baseurl }}favicon.ico" />
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="{{ site.baseurl }}apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ site.baseurl }}apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ site.baseurl }}apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ site.baseurl }}apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ site.baseurl }}apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.baseurl }}apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ site.baseurl }}apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ site.baseurl }}apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ site.baseurl }}apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ site.baseurl }}apple-touch-icon-152x152.png" />
+    <!-- Windows 8 Tile Icons -->
+    <meta name="msapplication-square70x70logo" content="{{ site.baseurl }}smalltile.png" />
+    <meta name="msapplication-square150x150logo" content="{{ site.baseurl }}mediumtile.png" />
+    <meta name="msapplication-wide310x150logo" content="{{ site.baseurl }}widetile.png" />
+    <meta name="msapplication-square310x310logo" content="{{ site.baseurl }}largetile.png" />
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="{{ site.title }} Atom Feed" href="{{ site.baseurl }}atom.xml">
+    <!-- HTML5 Shiv and Media Query Support for IE -->
+    <!--[if lt IE 9]>
+      <script src="{{ site.baseurl }}public/assets/js/vendor/html5shiv.min.js"></script>
+      <script src="{{ site.baseurl }}public/assets/js/vendor/respond.min.js"></script>
+      <script src="{{ site.baseurl }}public/assets/js/vendor/selectivizr.min.js"></script>
+    <![endif]-->
+
+    <script src="{{ site.baseurl }}public/assets/js/vendor/modernizr.custom.min.js"></script>
+
+</head>
+
+<body>
+    {% include navigation.html %}
+        <div class="wrap">
+            {% include head.html %}
+            {% include features.html %}
+
+            <div id="page-wrapper">
+                {% include browser-upgrade.html %} 
+                {{ content }}
+            </div>
+
+        </div>
+
+    <!-- <script src="{{ site.baseurl }}public/assets/js/vendor/jquery.min.js"></script> -->
+    <script src="{{ site.baseurl }}public/assets/js/vendor/classie.min.js"></script>
+    <script src="{{ site.baseurl }}public/assets/js/vendor/snap.svg.min.js"></script>
+    <script src="{{ site.baseurl }}public/assets/js/vendor/scrollReveal.min.js"></script>
+    <script src="{{ site.baseurl }}assets/js/main.js"></script>
+
+</body>
+
 </html>

@@ -2,6 +2,9 @@
 _gh_pages
 _site
 .ruby-version
+package.json
+bower.json
+gulpfile.js
 
 # Numerous always-ignore extensions
 *.diff
@@ -39,3 +42,8 @@ validation-report.json
 
 # Folders to ignore
 node_modules
+bower_components
+.sass-cache
+assets/img
+assets/js
+assets/css/vendor

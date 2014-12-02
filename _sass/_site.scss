@@ -1,0 +1,287 @@
+body {
+    overflow-x: hidden;
+    background: $pri-black;
+    .wrap-cover {
+        @include position(fixed, 0px 0px 0px 0px);
+        @include transition;
+        background: $pri-black;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 999998;
+    }
+    .wrap {
+        @include transform(translateX(0px));
+        @include transition(all .1s linear);
+        overflow: hidden;
+        .hero {
+            $hero-background-top: $pri-black;
+            $hero-background-bottom: darken($pri-black, 5%);
+            $hero-color: $white-smoke;
+            //$gradient-angle: 10deg;
+            $hero-image: '/public/assets/img/header_alt.png';
+            @include background(url($hero-image), no-repeat $hero-background-top scroll);
+            background-repeat: no-repeat;
+            background-position: top;
+            background-size: cover;
+            padding-bottom: 4em;
+            button {
+                @include button(flat, $crimson);
+            }
+            .hero-logo img {
+                width: 200px;
+                margin-bottom: 2.5em;
+                @include animation(bounceInDown 1s 0.5s both);
+                @include media($large-screen) {
+                    width: 250px;
+                }
+            }
+            .hero-inner {
+                @include outer-container(100%);
+                @include clearfix;
+                padding: 3em;
+                margin: auto;
+                text-align: center;
+                color: $hero-color;
+                .hero-copy {
+                    text-align: center;
+                    @include animation(fadeInUp 1s 0.7s both);
+                    h1 {
+                        font-size: 1.125em;
+                        margin-bottom: .5em;
+                        span {
+                            font-weight: 600;
+                            color: $crimson;
+                            @include animation(bounceInUp 1.2s 0.5s both);
+                        }
+                        @include media($large-screen) {
+                            font-size: 1.5em;
+                        }
+                    }
+                    p {
+                        font-family: $serif;
+                        margin: auto;
+                        margin-top: 3em;
+                        margin-bottom: 3em;
+                        font-weight: 400;
+                        line-height: 1.4em;
+                        font-size: 0.8em;
+                        @include media($large-screen) {
+                            font-size: 1em;
+                            max-width: 40%;
+                        }
+                    }
+                }
+            }
+        }
+        .box_wrapper {
+            @include outer-container(100%);
+            @include row();
+            @include span-columns(6);
+            width: 100%;
+            @include clearfix;
+            padding: 3em;
+            margin: auto;
+            text-align: center;
+            height: auto;
+            .ze_box {
+                max-width: 1300px;
+                margin: 0 auto;
+                .box {
+                    @include span-columns(6 of 6);
+                    position: relative;
+                    height: auto;
+                    .boxy {
+                        position: relative;
+                        height: 200px;
+                        width: 70%;
+                        display: block;
+                        margin: 0 auto;
+                        #desktop_svg {
+                            height: 100%;
+                            @include position(absolute, 0px null null 0px);
+                            //@include animation(bounceInDown 1s 0.5s both);
+                        }
+                        #laptop_svg {
+                            height: 100%;
+                            @include position(absolute, 20% null null 15%);
+                        }
+                        #tab_svg {
+                            height: 100%;
+                            @include position(absolute, 0px null null 0px);
+                        }
+                        #mob_svg {
+                            height: 100%;
+                            @include position(absolute, 10% null null 15%);
+                        }
+                        #graphic_svg {
+                            height: 100%;
+                            @include position(absolute, 0px null null 0px);
+                        }
+                    }
+                    h1 {
+                        display: block;
+                        position: relative;
+                        font-weight: 600;
+                        color: $crimson;
+                    }
+                }
+            }
+            @include media($medium-screen) {
+                .ze_box {
+                    .box {
+                        @include span-columns(2 of 6);
+                        .boxy {
+                            height: 170px;
+                            width: 100%;
+                            #desktop_svg {
+                                width: 90%;
+                            }
+                            #laptop_svg {
+                                width: 80%;
+                                @include position(absolute, 30% null null 35%);
+                            }
+                            #tab_svg {
+                                width: 70%;
+                            }
+                            #mob_svg {
+                                width: 60%;
+                            }
+                            #graphic_svg {
+                                width: 70%;
+                            }
+                        }
+                    }
+                }
+            }
+            @include media($large-screen) {
+                .ze_box {
+                    .box {
+                        @include span-columns(2 of 6);
+                        .boxy {
+                            height: 350px;
+                            width: 100%;
+                            #desktop_svg {
+                                width: 90%;
+                            }
+                            #laptop_svg {
+                                width: 80%;
+                                @include position(absolute, 15% null null 35%);
+                            }
+                            #tab_svg {
+                                width: 90%;
+                            }
+                            #mob_svg {
+                                width: 80%;
+                                @include position(absolute, 10% null null 35%);
+                            }
+                            #graphic_svg {
+                                width: 90%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.showmenu {
+        .wrap {
+            @include transform(translateX(100px));
+            @include filter(blur(2px));
+        }
+        .wrap-cover {
+            opacity: .4;
+            visibility: visible;
+        }
+        span.menu-button {
+            opacity: 0.4;
+        }
+        .ze-menu {
+            @include transform(translateX(0px));
+        }
+    }
+}
+/*****Menu*******/
+
+span.menu-button {
+    cursor: pointer;
+    outline: none;
+    position: fixed;
+    top: 1em;
+    right: 1em;
+    z-index: 999999;
+    span {
+        font-size: 1.5em;
+        color: $crimson;
+        text-transform: uppercase;
+        @include media($large-screen) {
+            font-size: 2em;
+        }
+    }
+    .sliding-menu-button {
+        color: $crimson;
+        font-size: 1.5em;
+        @include media($large-screen) {
+            font-size: 2em;
+        }
+    }
+    @include media($large-screen) {
+        top: 2em;
+        right: 2em;
+    }
+}
+span.close-button {
+    cursor: pointer;
+    outline: none;
+    position: absolute;
+    padding: 3px;
+    top: 1em;
+    right: 1em;
+    z-index: 9999999;
+    .closing-menu-button {
+        color: $pri-black;
+        font-size: 1.5em;
+        @include media($large-screen) {
+            font-size: 2em;
+        }
+    }
+    @include media($large-screen) {
+        top: 2em;
+        right: 2em;
+        padding: 0px;
+    }
+}
+.ze-menu {
+    @include position(fixed, 0px auto 0px 0px);
+    @include size(200px 100%);
+    @include transform(translateX(-200px));
+    @include transition(all .25s cubic-bezier(.4, .52, .92, .51));
+    background: $crimson;
+    $shadow: inset -2px 0px 5px rgba(0, 0, 0, 0.5);
+    @include prefixer(box-shadow, $shadow, webkit ms moz o spec);
+    z-index: 999999;
+    //-webkit-overflow-scrolling: touch;
+    li a {
+        border-bottom: $pri-black;
+        color: $pri-black;
+        display: block;
+        font-weight: bold;
+        padding: 1em 2em;
+        &:hover {
+            background-color: $pri-black;
+            color: $crimson;
+        }
+    }
+    a img {
+        margin: 0 auto;
+        width: 90px;
+        outline: none;
+        margin: 0 0 0 25%;
+        @include media($large-screen) {
+            width: 150px;
+        }
+    }
+    @include media($large-screen) {
+        @include size(400px 100%);
+        @include transform(translateX(-400px));
+    }
+}

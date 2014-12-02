@@ -7,11 +7,28 @@ relative_permalinks: true
 # Setup
 title:            HS - Develop &amp; Design
 tagline:          Develop + Design
+description:      Portfolio for HS - Develop &amp; Design. Develop + Design web apps, mobile apps & graphic design (logos, illustrations, icons)
+defaultimg:       default_img.png
 url:              http://hs-dev-design.com
-paginate:         1
+logo: 			      logo.svg
 baseurl:          /
 author:
   name:           Herbert Kagumba
   url:            http://hs-dev-design.com
   email:          hs@hs-dev-design.com
 
+# Jekyll configuration
+sass:
+  sass_dir: _sass
+  style: compressed
+exclude: ["assets/img", "assets/js/vendor", "assets/css/vendor", "bower_components", "node_modules", ".sass-cache", "bower.json", "Gemfile", "Gemfile.lock", "gulpfile.js", "package.json", "README.md", "LICENSE", ".gitignore", ".gitattributes", ".git"]
+owner:
+  name: Herbert Kagumba
+  email: habukagumba@gmail.com
+  twitter: HabuKagumba
+  google:
+    ad-client:
+    ad-slot:
+  bio:
+  avatar: me.svg
+discus_shortname:
