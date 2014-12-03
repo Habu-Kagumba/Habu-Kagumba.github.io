@@ -254,7 +254,7 @@ span.close-button {
     @include position(fixed, 0px auto 0px 0px);
     @include size(200px 100%);
     @include transform(translateX(-200px));
-    @include transition(all .25s cubic-bezier(.4, .52, .92, .51));
+    @include transition(all .25s linear);
     background: $crimson;
     $shadow: inset -2px 0px 5px rgba(0, 0, 0, 0.5);
     @include prefixer(box-shadow, $shadow, webkit ms moz o spec);
