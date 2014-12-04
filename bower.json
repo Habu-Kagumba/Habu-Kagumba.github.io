@@ -1,0 +1,29 @@
+{
+  "name": "hs-develop-design",
+  "version": "0.0.0",
+  "homepage": "http://hs-dev-design.com",
+  "authors": [
+    "Herbert Kagumba <habukagumba@gmail.com>"
+  ],
+  "description": "HS - Develop & Design",
+  "keywords": [
+    "HS",
+    "Develop",
+    "Design"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.2.26"
+  },
+  "resolutions": {
+    "jquery": "1.11.1"
+  }
+}
