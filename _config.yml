@@ -21,7 +21,7 @@ author:
 sass:
   sass_dir: _sass
   style: compressed
-exclude: [".sass-cache"]
+exclude: [".sass-cache", "assets/js/vendor", "assets/img", "assets/css/vendor", "bower_components", "node_modules"]
 owner:
   name: Herbert Kagumba
   email: habukagumba@gmail.com

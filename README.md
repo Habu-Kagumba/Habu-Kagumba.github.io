@@ -1,2 +1,6 @@
-HS - Develop &amp; Design **project_site**
-==================================================
+# HS - Develop &amp; Design
+
+![HS - Develop & Design logo]
+(http://hs-dev-design.com/public/assets/img/logo.svg)
+
+

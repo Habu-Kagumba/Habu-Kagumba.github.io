@@ -3,15 +3,14 @@ body {
     background: $pri-black;
     .wrap-cover {
         @include position(fixed, 0px 0px 0px 0px);
-        @include transition;
         background: $pri-black;
         opacity: 0;
         visibility: hidden;
-        z-index: 999998;
+        z-index: $z-index-backdrop;
     }
     .wrap {
         @include transform(translateX(0px));
-        @include transition(all .1s linear);
+        @include transition($swift-ease-out);
         overflow: hidden;
         .hero {
             $hero-background-top: $pri-black;
@@ -28,9 +27,12 @@ body {
                 @include button(flat, $crimson);
             }
             .hero-logo img {
-                width: 200px;
+                width: 150px;
                 margin-bottom: 2.5em;
                 @include animation(bounceInDown 1s 0.5s both);
+                @include media($medium-screen) {
+                    width: 200px;
+                }
                 @include media($large-screen) {
                     width: 250px;
                 }
@@ -46,12 +48,15 @@ body {
                     text-align: center;
                     @include animation(fadeInUp 1s 0.7s both);
                     h1 {
-                        font-size: 1.125em;
+                        font-size: 0.95em;
                         margin-bottom: .5em;
                         span {
                             font-weight: 600;
                             color: $crimson;
                             @include animation(bounceInUp 1.2s 0.5s both);
+                        }
+                        @include media($medium-screen) {
+                            font-size: 1em;
                         }
                         @include media($large-screen) {
                             font-size: 1.5em;
@@ -185,8 +190,7 @@ body {
     }
     &.showmenu {
         .wrap {
-            @include transform(translateX(100px));
-            @include filter(blur(2px));
+            @include transform(translateX(10px));
         }
         .wrap-cover {
             opacity: .4;
@@ -202,52 +206,46 @@ body {
 }
 /*****Menu*******/
 
-span.menu-button {
-    cursor: pointer;
-    outline: none;
-    position: fixed;
-    top: 1em;
-    right: 1em;
-    z-index: 999999;
-    span {
-        font-size: 1.5em;
-        color: $crimson;
-        text-transform: uppercase;
-        @include media($large-screen) {
-            font-size: 2em;
+.head {
+    img.img_alt_fixed {
+        position: fixed;
+        top: -10em;
+		left: -10em;
+        width: 100px;
+        z-index: $z-index-sidenav - 1;
+    }
+    span.menu-button {
+        cursor: pointer;
+        outline: none;
+        position: fixed;
+        top: 1em;
+        right: 1em;
+        z-index: $z-index-backdrop - 1;
+        span {
+            font-size: 1em;
+            color: $crimson;
+            text-transform: uppercase;
+            @include media($medium-screen) {
+                font-size: 1.5em;
+            }
+            @include media($large-screen) {
+                font-size: 2em;
+            }
         }
-    }
-    .sliding-menu-button {
-        color: $crimson;
-        font-size: 1.5em;
-        @include media($large-screen) {
-            font-size: 2em;
+        .sliding-menu-button {
+            color: $crimson;
+            font-size: 1em;
+            @include media($medium-screen) {
+                font-size: 1.5em;
+            }
+            @include media($large-screen) {
+                font-size: 2em;
+            }
         }
-    }
-    @include media($large-screen) {
-        top: 2em;
-        right: 2em;
-    }
-}
-span.close-button {
-    cursor: pointer;
-    outline: none;
-    position: absolute;
-    padding: 3px;
-    top: 1em;
-    right: 1em;
-    z-index: 9999999;
-    .closing-menu-button {
-        color: $pri-black;
-        font-size: 1.5em;
         @include media($large-screen) {
-            font-size: 2em;
+            top: 2em;
+            right: 2em;
         }
-    }
-    @include media($large-screen) {
-        top: 2em;
-        right: 2em;
-        padding: 0px;
     }
 }
 .ze-menu {
@@ -258,8 +256,29 @@ span.close-button {
     background: $crimson;
     $shadow: inset -2px 0px 5px rgba(0, 0, 0, 0.5);
     @include prefixer(box-shadow, $shadow, webkit ms moz o spec);
-    z-index: 999999;
+    z-index: $z-index-sidenav;
     //-webkit-overflow-scrolling: touch;
+    span.close-button {
+        cursor: pointer;
+        outline: none;
+        position: absolute;
+        padding: 3px;
+        top: 1em;
+        right: 1em;
+        z-index: $z-index-sidenav;
+        .closing-menu-button {
+            color: $pri-black;
+            font-size: 1.5em;
+            @include media($large-screen) {
+                font-size: 2em;
+            }
+        }
+        @include media($large-screen) {
+            top: 2em;
+            right: 2em;
+            padding: 0px;
+        }
+    }
     li a {
         border-bottom: $pri-black;
         color: $pri-black;

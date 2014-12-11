@@ -16,3 +16,29 @@ $white-smoke: #f8f8f8;
 	$medium-screen: em(640);
 	$large-screen: em(860);
  */
+
+// Z-indexes
+//--------------------------------------------
+
+$z-index-tooltip: 100;
+$z-index-dialog: 90;
+$z-index-toast: 80;
+$z-index-bottom-sheet: 70;
+$z-index-sidenav: 60;
+$z-index-backdrop: 50;
+$z-index-fab: 20;
+
+// Easing Curves
+//--------------------------------------------
+
+$swift-ease-out-duration: 0.4s;
+$swift-ease-out-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+$swift-ease-out: all $swift-ease-out-duration $swift-ease-out-timing-function;
+
+$swift-ease-in-duration: 0.3s;
+$swift-ease-in-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+$swift-ease-in: all $swift-ease-in-duration $swift-ease-in-timing-function;
+
+$swift-ease-in-out-duration: 0.5s;
+$swift-ease-in-out-timing-function: cubic-bezier(0.35, 0, 0.25, 1);
+$swift-ease-in-out: all $swift-ease-in-out-duration $swift-ease-in-out-timing-function;
