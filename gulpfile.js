@@ -1,12 +1,11 @@
 var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
-	  uglify = require('gulp-uglify'),
+	uglify = require('gulp-uglify'),
     minifyCSS = require('gulp-minify-css'),
-	  imagemin = require('gulp-imagemin'),
+	imagemin = require('gulp-imagemin'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
     notify = require('gulp-notify'),
-    //cache = require('gulp-cache'),    
     del = require('del');
 
 gulp.task('scripts', function() {
@@ -32,7 +31,7 @@ gulp.task('images', function() {
   return gulp.src('assets/img/*')
     .pipe(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true }))
     .pipe(gulp.dest('public/assets/img'))
-    .pipe(notify({ message: 'Images task complete' }));
+    // .pipe(notify({ message: 'Images task complete' }));
 });
 
 gulp.task('clean', function(cb) {

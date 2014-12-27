@@ -101,3 +101,35 @@
         opacity: 0;
     }
 }
+@include keyframes(dash) {
+	0%, 100% {
+			@include transition-timing-function(cubic-bezier(0.215, 0.610, 0.355, 1.000));
+		}
+	0% {
+		stroke-dashoffset: 900;
+		stroke-width: 0.5;
+	}
+	100% {
+		stroke-dashoffset: 0;
+		stroke-width: 0.5;
+	}
+}
+@include keyframes(filld){
+	0%, 100% {
+			@include transition-timing-function(cubic-bezier(0.215, 0.610, 0.355, 1.000));
+		}
+	0% {
+		fill: none;
+	}
+	100% {
+		fill: #FF302C;
+	}
+}
+@include keyframes(spinning) {
+  from {
+	@include transform(rotate(0deg));
+  }
+  to {
+	@include transform(rotate(360deg));
+  }
+}

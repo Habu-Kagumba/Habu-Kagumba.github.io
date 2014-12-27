@@ -1,13 +1,6 @@
 body {
     overflow-x: hidden;
     background: $pri-black;
-    .wrap-cover {
-        @include position(fixed, 0px 0px 0px 0px);
-        background: $pri-black;
-        opacity: 0;
-        visibility: hidden;
-        z-index: $z-index-backdrop;
-    }
     .wrap {
         @include transform(translateX(0px));
         @include transition($swift-ease-out);
@@ -28,13 +21,13 @@ body {
             }
             .hero-logo img {
                 width: 150px;
-                margin-bottom: 2.5em;
                 @include animation(bounceInDown 1s 0.5s both);
                 @include media($medium-screen) {
                     width: 200px;
                 }
                 @include media($large-screen) {
                     width: 250px;
+					margin: 10% 0 2% 0;
                 }
             }
             .hero-inner {
@@ -77,6 +70,9 @@ body {
                     }
                 }
             }
+			@include media($large-screen){
+				height: 690px;
+			}
         }
         .box_wrapper {
             @include outer-container(100%);
@@ -98,36 +94,46 @@ body {
                     .boxy {
                         position: relative;
                         height: 200px;
-                        width: 70%;
+                        width: 100%;
                         display: block;
                         margin: 0 auto;
-                        #desktop_svg {
-                            height: 100%;
-                            @include position(absolute, 0px null null 0px);
-                            //@include animation(bounceInDown 1s 0.5s both);
-                        }
-                        #laptop_svg {
-                            height: 100%;
-                            @include position(absolute, 20% null null 15%);
-                        }
-                        #tab_svg {
-                            height: 100%;
-                            @include position(absolute, 0px null null 0px);
-                        }
-                        #mob_svg {
-                            height: 100%;
-                            @include position(absolute, 10% null null 15%);
-                        }
-                        #graphic_svg {
-                            height: 100%;
-                            @include position(absolute, 0px null null 0px);
-                        }
+						svg {
+							position:absolute;
+							top:0;
+							left:0;
+							width:100%;
+							height:130%;
+						}
+						svg#desktop_laptop{
+							stroke-dasharray: 0;
+							stroke-width: 0;
+							& path#text_1_, path#text {
+								fill: none;
+							}
+						}
+						svg.animd {
+							path, polygon, circle {
+							  stroke-dasharray: 900;
+							  @include animation(dash 8s 0s both);
+							}
+							& path#text_1_, path#text {
+								@include animation(filld 8s 0s both);
+							}
+						}
+						svg#tab_phone, svg#graphic{
+							height:100%;
+							stroke-dasharray: 0;
+							stroke-width: 0;
+							& path#text_1_, path#text {
+								fill: none;
+							}
+						}
                     }
                     h1 {
                         display: block;
                         position: relative;
                         font-weight: 600;
-                        color: $crimson;
+                        color:$crimson;
                     }
                 }
             }
@@ -138,22 +144,9 @@ body {
                         .boxy {
                             height: 170px;
                             width: 100%;
-                            #desktop_svg {
-                                width: 90%;
-                            }
-                            #laptop_svg {
-                                width: 80%;
-                                @include position(absolute, 30% null null 35%);
-                            }
-                            #tab_svg {
-                                width: 70%;
-                            }
-                            #mob_svg {
-                                width: 60%;
-                            }
-                            #graphic_svg {
-                                width: 70%;
-                            }
+							svg{
+								height: auto;
+							}
                         }
                     }
                 }
@@ -163,25 +156,11 @@ body {
                     .box {
                         @include span-columns(2 of 6);
                         .boxy {
-                            height: 350px;
+                            height: 300px;
                             width: 100%;
-                            #desktop_svg {
-                                width: 90%;
-                            }
-                            #laptop_svg {
-                                width: 80%;
-                                @include position(absolute, 15% null null 35%);
-                            }
-                            #tab_svg {
-                                width: 90%;
-                            }
-                            #mob_svg {
-                                width: 80%;
-                                @include position(absolute, 10% null null 35%);
-                            }
-                            #graphic_svg {
-                                width: 90%;
-                            }
+							svg{
+								height: auto;
+							}
                         }
                     }
                 }
@@ -196,13 +175,32 @@ body {
             opacity: .4;
             visibility: visible;
         }
-        span.menu-button {
-            opacity: 0.4;
-        }
+		.head{
+			span.menu-button{
+				i{
+					opacity: 0.3;
+				}
+			}
+		}
         .ze-menu {
             @include transform(translateX(0px));
         }
     }
+	#noscript{
+		position:fixed;top:0;left:0;
+		width:100%;
+		height:100%;
+		z-index:99;
+		background:rgba(0,0,0,0.9);
+
+		span {
+			position:absolute;
+			top:50%;
+			left:17%;
+			font-size:5vh;
+			color: 	$crimson;
+		}
+	}
 }
 /*****Menu*******/
 
@@ -220,28 +218,33 @@ body {
         position: fixed;
         top: 1em;
         right: 1em;
-        z-index: $z-index-backdrop - 1;
-        span {
-            font-size: 1em;
-            color: $crimson;
-            text-transform: uppercase;
+		z-index: $z-index-backdrop + 1;
+        svg{
+            fill: $crimson;
+            width: 2em;
+			z-index: $z-index-backdrop + 1;
+			opacity: 1;
+			visibility: visible;
             @include media($medium-screen) {
+                width: 2em;
+            }
+            @include media($large-screen) {
+                width: 2.5em;
+            }
+        }
+		i {
+			color: $crimson;
+			font-size: 1em;
+			z-index: $z-index-backdrop;
+			opacity: 0;
+			visibility: hidden;
+			@include media($medium-screen) {
                 font-size: 1.5em;
             }
             @include media($large-screen) {
                 font-size: 2em;
             }
-        }
-        .sliding-menu-button {
-            color: $crimson;
-            font-size: 1em;
-            @include media($medium-screen) {
-                font-size: 1.5em;
-            }
-            @include media($large-screen) {
-                font-size: 2em;
-            }
-        }
+		}
         @include media($large-screen) {
             top: 2em;
             right: 2em;
@@ -266,6 +269,8 @@ body {
         top: 1em;
         right: 1em;
         z-index: $z-index-sidenav;
+		opacity: 0;
+		visibility: hidden;
         .closing-menu-button {
             color: $pri-black;
             font-size: 1.5em;
@@ -279,18 +284,22 @@ body {
             padding: 0px;
         }
     }
-    li a {
-        border-bottom: $pri-black;
-        color: $pri-black;
-        display: block;
-        font-weight: bold;
-        padding: 1em 2em;
-        &:hover {
-            background-color: $pri-black;
-            color: $crimson;
-        }
-    }
-    a img {
+    li {
+		a {
+        	border-bottom: $pri-black;
+        	color: $pri-black;
+        	display: block;
+        	font-weight: bold;
+        	padding: 1em 2em;
+			border-bottom: 1px solid rgba(1,37,48, 0.1);
+        	&:hover, &.current {
+            	background-color: $pri-black;
+            	color: $crimson;
+        	}
+    	}
+
+	}
+	a img {
         margin: 0 auto;
         width: 90px;
         outline: none;
@@ -303,4 +312,89 @@ body {
         @include size(400px 100%);
         @include transform(translateX(-400px));
     }
+}
+
+// Modernizr hacks
+
+.no-svg {
+	.head{
+		span.menu-button {
+			svg {
+				opacity: 0;
+				visibility: hidden;
+			}
+			i {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+	.ze-menu {
+		span.close-button {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}
+
+// Fixed elements (some - except menus)
+
+.wrap-cover {
+	@include position(fixed, 0px 0px 0px 0px);
+	background: $pri-black;
+	opacity: 0;
+	visibility: hidden;
+	z-index: $z-index-backdrop;
+}
+
+%cog {
+	@include background(url('../../public/assets/img/settings.svg'), no-repeat);
+	position:absolute;
+	@include animation-name(spinning);
+  	@include animation-duration(6s);
+  	@include animation-timing-function(linear);
+  	@include animation-iteration-count(infinite);
+  	@include size(32px);
+}
+.cog-left{
+  @extend %cog;
+  left: 0px;
+  top: 25px; 
+}
+
+.cog-right{
+  @extend %cog;
+  left: 22px;
+  top: 40px;
+  @include animation-direction(reverse);
+}
+
+.cog-center{
+  @extend %cog;
+  left: 15px;
+  top: 2px;
+  @include animation-direction(reverse);
+}
+
+.construction{
+  margin: auto;
+  @include position(fixed,null 2px 0px null);
+  @include size(54px 74px);
+  z-index: $z-index-backdrop + 2;
+  span {
+	@include position(absolute, 30px null null -150px);
+	color:$crimson;
+	text-transform:uppercase;
+	font-weight: bold;
+	opacity: 0;
+	visibility: hidden;
+	@include transition(all 0.2s cubic-bezier(0,.76,1,.21));
+	}
+   &:hover {
+	span{
+		opacity: 1;
+		visibility:visible;
+		left: -200px;
+		}
+	}
 }

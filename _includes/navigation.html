@@ -1,7 +1,14 @@
 <div class="head">
-    <span class="menu-button" id="open-button">
-    <span>menu</span>&nbsp;&nbsp;<i class="fa fa-navicon sliding-menu-button"></i>
-    </span>
+    <span class="menu-button" id="open-button" title="Menu">
+    <svg version="1.1" id="hamburger" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+		 <path id="_x33_" d="M56.2,47.1H3.8c-1.5,0-2.7-1.2-2.7-2.7s1.2-2.7,2.7-2.7h52.3
+		 	c1.5,0,2.7,1.2,2.7,2.7S57.7,47.1,56.2,47.1"/>
+			<path id="_x32_" d="M56.2,32.7H3.8c-1.5,0-2.7-1.2-2.7-2.7c0-1.5,1.2-2.7,2.7-2.7
+				h52.3c1.5,0,2.7,1.2,2.7,2.7C58.9,31.5,57.7,32.7,56.2,32.7"/>
+				<path id="_x31_" d="M56.2,18.3H3.8c-1.5,0-2.7-1.2-2.7-2.7c0-1.5,1.2-2.7,2.7-2.7
+					h52.3c1.5,0,2.7,1.2,2.7,2.7C58.9,17.1,57.7,18.3,56.2,18.3"/>
+	</svg>
+	<i class='fa fa-navicon'></i>
 </div>
 
 <nav class="ze-menu">
@@ -9,17 +16,21 @@
     <a href="{{ site.baseurl }}"><img src="{{ site.baseurl }}public/assets/img/logo_alt.svg" alt="HS - Develop &amp; Design">
     </a>
     <ul>
-        <li><a href="#">Home</a>
-        </li>
-        <li><a href="#">Portfolio</a>
-        </li>
-        <li><a href="#">Blog</a>
-        </li>
-        <li><a href="#">Contact</a>
-        </li>
+		{% for link in site.data.navigation.navigation  %}
+		<li><a href='{{ link.url  }}' {% if page.url == link.url  %}class="current"{% endif  %} title="{{ link.text  }}">{{ link.text  }}</a>
+			</li>
+		{% endfor  %}
+
     </ul>
 </nav>
 
 
 <div class="wrap-cover">
+</div>
+
+<div class='construction'>
+	<span>under construction</span>
+	<div class='cog-left'></div>
+    <div class='cog-right'></div>
+    <div class='cog-center'></div>
 </div>

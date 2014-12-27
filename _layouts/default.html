@@ -8,9 +8,20 @@
         {% if page.title %} {{ page.title }} • {% endif %} {{ site.title }}
     </title>
     {% if page.excerpt %}
-    <meta name="description" content="{{ page.excerpt | strip_html }}"> {% endif %} {% if page.tags %}
-    <meta name="keywords" content="{{ page.tags | join: ', ' }}"> {% endif %} {% if page.author %} {% assign author = site.data.authors[page.author] %} {% else %} {% assign author = site.owner %} {% endif %} {% include open-graph.html %} {% if author.google.plus %}
-    <link rel="author" href="https://plus.google.com/{{ author.google.plus }}" /> {% endif %}
+    	<meta name="description" content="{{ page.excerpt | strip_html }}">
+	{% endif %}
+	{% if page.tags %}
+    	<meta name="keywords" content="{{ page.tags | join: ', ' }}">
+	{% endif %}
+	{% if page.author %}
+		{% assign author = site.data.authors[page.author] %}
+	{% else %}
+		{% assign author = site.owner %}
+	{% endif %}
+	{% include open-graph.html %}
+	{% if author.google.plus %}
+    	<link rel="author" href="https://plus.google.com/{{ author.google.plus }}" />
+	{% endif %}
 
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
     <link href="{{ site.url }}/sitemap.xml" type="application/xml" rel="sitemap" title="Sitemap">
@@ -65,23 +76,25 @@
 <body>
     {% include navigation.html %}
         <div class="wrap">
-            {% include head.html %}
-			<!--  {% include features.html %} -->
 
-            <div id="page-wrapper">
-                {% include browser-upgrade.html %} 
+                {% include browser-upgrade.html %}
                 {{ content }}
-            </div>
 
         </div>
+		<noscript>
+		        <div id='noscript'>
+		                <span>Please enable javascript for an awesome experience.<span>
+		        </div>
+		</noscript>
 
-    <script src="{{ site.baseurl }}public/assets/js/vendor/classie.min.js"></script>
-	<!--  <script src="{{ site.baseurl }}public/assets/js/vendor/jquery.min.js"></script> -->
+	<script src="{{ site.baseurl }}public/assets/js/vendor/classie.min.js"></script>
+	<!--<script src="{{ site.baseurl }}public/assets/js/vendor/jquery.min.js"></script>-->
     <script src="{{ site.baseurl }}public/assets/js/vendor/velocity.min.js"></script>
-	<!--  <script src="{{ site.baseurl }}public/assets/js/vendor/waypoints.min.js"></script>  -->
-    <!-- <script src="{{ site.baseurl }}public/assets/js/vendor/snap.svg.min.js"></script>
-    <script src="{{ site.baseurl }}public/assets/js/vendor/scrollReveal.min.js"></script> -->
-    <script src="{{ site.baseurl }}assets/js/main.js"></script>
+	<script src="{{ site.baseurl }}public/assets/js/vendor/noframework.waypoints.min.js"></script>
+	<script src="{{ site.baseurl }}public/assets/js/vendor/snap.svg.min.js"></script>
+	<!-- <script src="{{ site.baseurl }}public/assets/js/vendor/scrollReveal.min.js"></script> -->
+	<script src="{{ site.baseurl }}assets/js/main.js"></script>
+    <!--<script src="{{ site.baseurl  }}assets/js/plugins.js"></script>-->
 
 </body>
 

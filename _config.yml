@@ -10,7 +10,7 @@ tagline:          Develop + Design
 description:      Portfolio for HS - Develop &amp; Design. Develop + Design web apps, mobile apps & graphic design (logos, illustrations, icons)
 defaultimg:       default_img.png
 url:              http://hs-dev-design.com
-logo: 			      logo.svg
+logo: 			  logo.svg
 baseurl:          /
 author:
   name:           Herbert Kagumba
