@@ -35,11 +35,10 @@
 			}
 		});
 
+		if (closebtn) {
+			closeMenuz.on('tap press', toggleMenu);
+		}
 
-		// if (closebtn) {
-		// 	closeMenuz.on('tap press', toggleMenu);
-		// }
-        //
 		contentz.on("tap press swipeleft", function(ev){
 			var target = ev.target;
 			if (isOpen && target !== openbtn){
