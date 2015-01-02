@@ -260,7 +260,7 @@ body {
     $shadow: inset -2px 0px 5px rgba(0, 0, 0, 0.5);
     @include prefixer(box-shadow, $shadow, webkit ms moz o spec);
     z-index: $z-index-sidenav;
-    //-webkit-overflow-scrolling: touch;
+   overflow-y: auto;
     span.close-button {
         cursor: pointer;
         outline: none;
@@ -359,7 +359,7 @@ body {
 .cog-left{
   @extend %cog;
   left: 0px;
-  top: 25px; 
+  top: 25px;
 }
 
 .cog-right{
