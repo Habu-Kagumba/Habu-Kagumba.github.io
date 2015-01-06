@@ -27,7 +27,7 @@ body {
                 }
                 @include media($large-screen) {
                     width: 250px;
-					margin: 10% 0 2% 0;
+					margin: 5% 0 2% 0;
                 }
             }
             .hero-inner {
@@ -169,8 +169,17 @@ body {
     }
     &.showmenu {
         .wrap {
-            @include transform(translateX(10px));
+            @include transform(translateX(200px));
+			@include media($large-screen){
+				@include transform(translateX(400px));
+			}
         }
+		.menu-button{
+			@include transform(translateX(200px));
+			@include media($large-screen){
+				@include transform(translateX(400px));
+			}
+		}
         .wrap-cover {
             opacity: .4;
             visibility: visible;
@@ -217,8 +226,9 @@ body {
         outline: none;
         position: fixed;
         top: 1em;
-        right: 1em;
+        left: 1em;
 		z-index: $z-index-backdrop + 1;
+		@include transition($swift-ease-out);
         svg{
             fill: $crimson;
             width: 2em;
@@ -258,9 +268,9 @@ body {
     @include transition(all .25s linear);
     background: $crimson;
     $shadow: inset -2px 0px 5px rgba(0, 0, 0, 0.5);
-    @include prefixer(box-shadow, $shadow, webkit ms moz o spec);
+    // @include prefixer(box-shadow, $shadow, webkit ms moz o spec);
     z-index: $z-index-sidenav;
-   overflow-y: auto;
+    overflow-y: auto;
     span.close-button {
         cursor: pointer;
         outline: none;

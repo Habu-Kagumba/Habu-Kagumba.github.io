@@ -70,27 +70,27 @@
 	function openMenu() {
 		topBar.animate({
 			path: "M56.2,47.1H3.8c-1.5,0-2.7-1.2-2.7-2.7s1.2-2.7,2.7-2.7h52.3c1.5,0,2.7,1.2,2.7,2.7S57.7,47.1,56.2,47.1"
-		}, 400, mina.elastic);
+		}, 900, mina.elastic);
 		middleBar.animate({
 			fill: '#FF302C',
 			opacity: 1
-		}, 400, mina.elastic);
+		}, 900, mina.elastic);
 		botBar.animate({
 			path: 'M56.2,18.3H3.8c-1.5,0-2.7-1.2-2.7-2.7c0-1.5,1.2-2.7,2.7-2.7h52.3c1.5,0,2.7,1.2,2.7,2.7C58.9,17.1,57.7,18.3,56.2,18.3'
-		}, 400, mina.elastic);
+		}, 900, mina.elastic);
 	}
 
 	function closeMenu() {
 		topBar.animate({
 			path: "M46.6,50.4l-37-37c-1.1-1.1-1.1-2.8,0-3.8c1.1-1.1,2.8-1.1,3.8,0l37,37c1.1,1.1,1.1,2.8,0,3.8C49.4,51.5,47.7,51.5,46.6,50.4"
-		}, 400, mina.elastic);
+		}, 900, mina.elastic);
 		middleBar.animate({
 			fill: 'none',
 			opacity: 0
-		},400,mina.elastic);
+		},900,mina.elastic);
 		botBar.animate({
 			path: 'M50.4,13.4l-37,37c-1.1,1.1-2.8,1.1-3.8,0c-1.1-1.1-1.1-2.8,0-3.8l37-37c1.1-1.1,2.8-1.1,3.8,0C51.5,10.6,51.5,12.3,50.4,13.4'
-		}, 400, mina.elastic);
+		}, 900, mina.elastic);
  	}
 
 	function svgAnims() {
