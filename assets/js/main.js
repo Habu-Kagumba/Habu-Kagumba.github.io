@@ -9,9 +9,11 @@
         openbtn = document.getElementById('open-button'),
         closebtn = document.getElementById('close-button'),
         isOpen = false,
-		boxy = bodyEl.querySelector('.box');
+		boxy = bodyEl.querySelector('.box'),
+		bima = bodyEl.querySelector('.bimatele'),
+		cover = bodyEl.querySelector('.cover');
 
-	// svg
+	// hamburger svg
 	var svgMenu = Snap('#hamburger'),
 		topBar = svgMenu.select('#_x33_'),
 		middleBar = svgMenu.select('#_x32_'),
@@ -60,12 +62,6 @@
         isOpen = !isOpen;
     }
 
-	//animations
-	// var mAt = new TimelineLite({paused:true});
-	// mAt.add(TweenLite.to(wrap, 0.2, {x:100, ease:Linear.easeNone}));
-
-	// var zeMenu = new Timeline({paused:true});
-	// 	zeMenu.add(TweenLite.to());
 
 	function openMenu() {
 		topBar.animate({
@@ -93,26 +89,56 @@
 		}, 900, mina.elastic);
  	}
 
-	function svgAnims() {
-		if (boxy) {
-			var waypoint = new Waypoint({
-				element: boxy,
-				handler: function(direction) {
-				var desklap = document.querySelector('svg#desktop_laptop');
-				var tabphone = document.querySelector('svg#tab_phone');
-				var graphic = document.querySelector('svg#graphic');
-					classie.toggle(desklap, 'animd');
-					classie.toggle(tabphone, 'animd');
-					classie.toggle(graphic, 'animd');
-				},
-				offset: 500
+
+	function bimateleAnims() {
+		//bt logo svg
+		var btLogo = Snap('#bima_logo'),
+			b_t = btLogo.select('#b'),
+			t_b = btLogo.select('#t');
+
+		// animations
+		var bimaAdmin = new TimelineLite({paused:true});
+		bimaAdmin.add(TweenLite.to(bima, 5, {backgroundPosition:"bottom", ease:Power4.easeInOut}));
+
+		var bimaShow = new TimelineLite({paused:true});
+		bimaShow.add(TweenLite.from(bima, 2, {left:'100%', ease:Power4.easeInOut}));
+
+		if (bima){
+			var scaleIn = new Waypoint({
+				element: bima,
+				handler: function(direction){
+					if (direction === 'down'){
+							bimaShow.play();
+					} else if(direction === 'up'){
+							bimaShow.reverse();
+					}
+				}, offset: 400
 			});
+			var waypoint = new Waypoint({
+				element: bima,
+				handler: function(direction){
+					var desklap = document.querySelector('svg#desktop_laptop');
+					var tabphone = document.querySelector('svg#tab_phone');
+					var graphic = document.querySelector('svg#graphic');
+						classie.toggle(desklap, 'animd');
+						classie.toggle(tabphone, 'animd');
+						classie.toggle(graphic, 'animd');
+					// var bimaAdmin =	TweenLite.to(bima, 2, {backgroundPosition:"bottom", ease:Power4.easeInOut});
+					if (direction === 'down'/*  && bimaAdmin.reversed() */){
+						bimaAdmin.play();
+					} else if (direction === 'up') {
+						bimaAdmin.reverse();
+					}
+				}, offset: 100
+			});
+
 		}
 	}
 
 	function init() {
 		initEvents();
-		svgAnims();
+		// svgAnims();
+		bimateleAnims();
 	}
 
 	// run functions
