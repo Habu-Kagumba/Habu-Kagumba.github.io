@@ -362,6 +362,17 @@ body {
 			color: 	$crimson;
 		}
 	}
+	.footer-wrapper{
+		@include clearfix;
+		margin: 2em auto;
+		text-align: center;
+		font-size: 20px;
+		.social-icons {
+			a {
+				padding: 4px 8px;
+			}
+		}
+	}
 }
 /*****Menu*******/
 

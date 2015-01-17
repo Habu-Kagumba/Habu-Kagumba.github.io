@@ -20,15 +20,15 @@ author:
 # Jekyll configuration
 sass:
   sass_dir: _sass
-  style: coaressed
-exclude: [".sass-cache", "assets/js/vendor", "assets/img", "assets/css/vendor", "bower_coaonents", "node_modules"]
+  style: compressed
+exclude: [".sass-cache", "assets/js/vendor", "assets/img", "assets/css/vendor", "bower_components", "node_modules"]
 owner:
   name: Herbert Kagumba
   email: herbertkagumba@gmail.com 
   twitter: HabuKagumba
   github: Habu-Kagumba
   google:
-    plus: +herbertkagumba
+    plus: herbertkagumba
     analytics:
     verify:
     ad-client:
