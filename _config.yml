@@ -24,7 +24,7 @@ sass:
 exclude: [".sass-cache", "assets/js/vendor", "assets/img", "assets/css/vendor", "bower_components", "node_modules"]
 owner:
   name: Herbert Kagumba
-  email: herbertkagumba@gmail.com 
+  email: herbertkagumba@gmail.com
   twitter: HabuKagumba
   github: Habu-Kagumba
   google:
