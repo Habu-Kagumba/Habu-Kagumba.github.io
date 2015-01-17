@@ -24,11 +24,19 @@ sass:
 exclude: [".sass-cache", "assets/js/vendor", "assets/img", "assets/css/vendor", "bower_coaonents", "node_modules"]
 owner:
   name: Herbert Kagumba
-  email: habukagumba@gmail.com
+  email: herbertkagumba@gmail.com 
   twitter: HabuKagumba
+  github: Habu-Kagumba
   google:
+    plus: +herbertkagumba
+    analytics:
+    verify:
     ad-client:
     ad-slot:
-  bio:
+  bing-verify:
   avatar: me.svg
-discus_shortname:
+disqus_shortname:
+
+#gems
+gems:
+  - jekyll-sitemap
