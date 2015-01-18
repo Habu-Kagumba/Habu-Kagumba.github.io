@@ -7,7 +7,7 @@ relative_permalinks: true
 # Setup
 title:            HS - Develop & Design
 tagline:          Develop + Design
-description:      Portfolio for HS - Develop & Design. Develop + Design web apps, mobile apps & graphic design (logos, illustrations, icons)
+description:      Develop + Design web apps, mobile apps & graphic design (logos, illustrations, icons)
 defaultimg:       default_img.png
 url:              http://hs-dev-design.com
 logo: 			  logo.svg
@@ -24,7 +24,14 @@ sass:
 exclude: [".sass-cache", "assets/js/vendor", "assets/img", "assets/css/vendor", "bower_components", "node_modules"]
 owner:
   name: Herbert Kagumba
+  job: Front-End & Back-End Development
+  desc: Front-End & Back-End Developer extraordinaire
+  po: 733-00515, Buruburu, Kenya
+  city: Nairobi
+  pocode: 00515
+  country: Kenya
   email: herbertkagumba@gmail.com
+  tel: 254727114286
   twitter: HabuKagumba
   github: Habu-Kagumba
   google:

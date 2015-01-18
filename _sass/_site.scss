@@ -89,46 +89,6 @@ body {
             .ze_box {
                 width: 100%;
                 margin: 0 auto;
-                .box {
-                    @include span-columns(6 of 6);
-                    position: relative;
-                    height: auto;
-                    .boxy {
-                        position: relative;
-                        height: 200px;
-                        width: 100%;
-                        display: block;
-                        margin: 0 auto;
-						svg {
-							position:absolute;
-							top:0;
-							left:0;
-							width:100%;
-							height:130%;
-						}
-						// svg#desktop_laptop{
-						// 	stroke-dasharray: 0;
-						// 	stroke-width: 0;
-						// 	& path#text_1_, path#text {
-						// 		fill: none;
-						// 	}
-						// }
-						svg#tab_phone, svg#graphic{
-							height:100%;
-							stroke-dasharray: 0;
-							stroke-width: 0;
-							& path#text_1_, path#text {
-								fill: none;
-							}
-						}
-                    }
-                    h1 {
-                        display: block;
-                        position: relative;
-                        font-weight: 600;
-                        color:$crimson;
-                    }
-                }
 				.bimatele{
 					width:100%;
 					@include position(relative);
@@ -284,38 +244,10 @@ body {
 								a{
 									@include animation(zoomInLeft 1s 0.9s both);
 								}
-							}	
+							}
 						}
 					}
 				}
-            }
-            @include media($medium-screen) {
-                .ze_box {
-                    .box {
-                        @include span-columns(2 of 6);
-                        .boxy {
-                            height: 170px;
-                            width: 100%;
-							svg{
-								height: auto;
-							}
-                        }
-                    }
-                }
-            }
-            @include media($large-screen) {
-                .ze_box {
-                    .box {
-                        @include span-columns(2 of 6);
-                        .boxy {
-                            height: 300px;
-                            width: 100%;
-							svg{
-								height: auto;
-							}
-                        }
-                    }
-                }
             }
         }
     }
@@ -364,12 +296,44 @@ body {
 	}
 	.footer-wrapper{
 		@include clearfix;
+		@include outer-container;
 		margin: 2em auto;
+		color: $crimson;
 		text-align: center;
-		font-size: 20px;
-		.social-icons {
-			a {
-				padding: 4px 8px;
+		.org{
+			@include span-columns(10);
+			@include shift(1);
+		}
+		.me{
+			@include span-columns(10);
+			@include shift(1);
+			font-size: .75em;
+			img {
+				border-radius: 100%;
+			}
+			.social-icons {
+				a {
+					padding: 4px 8px;
+					font-size: 20px;
+				}
+			}
+		}
+		@include media($medium-screen){
+			.org{
+				@include span-columns(6);
+				@include shift(0);
+			}
+			.me {
+				@include span-columns(6);
+				@include shift(0);
+			}
+		}
+		@include media($large-screen){
+			.org{
+				@include span-columns(6);
+			}
+			.me {
+				@include span-columns(6);
 			}
 		}
 	}

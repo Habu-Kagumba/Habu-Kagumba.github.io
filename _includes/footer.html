@@ -1,5 +1,35 @@
 {% if site.owner.google.ad-client and site.owner.google.ad-slot %}{% include ad-footer.html %}{% endif %}
-
+<div class="org">
+		<div itemscope itemtype="http://schema.org/Organization">
+			<a href='{{ site.url  }}' itemprop='logo'>
+				<img src='{{ site.baseurl  }}public/assets/img/logo.svg' alt='{{ site.title  }}' />
+			</a>
+			<meta itemprop="url" content="{{ site.url }}">
+			<meta itemprop="name" content='{{ site.title  }}'>
+		</div>
+		<meta itemprop="description" content='{{ site.description  }}'>
+</div>
+<div class='me'>
+<div itemscope itemtype="http://schema.org/Person">
+	<a itemprop="url" href="{{ site.url  }}">
+		<img src='{{ site.baseurl  }}public/assets/img/me.svg' alt='{{ site.owner.name  }}' />
+	</a>
+	<div itemprop="name">{{ site.owner.name  }}</div>
+	<div itemprop='jobtitle'>{{ site.owner.job }}</div>
+	<div itemprop="email"><a href="mailto:{{ site.author.email }}">{{ site.author.email  }}</a></div>
+	<div itemprop="telephone"><a href="tel:+{{ site.owner.tel  }}">+{{ site.owner.tel  }}</a></div>
+	<meta itemprop='description' content="{{ site.owner.desc }}">
+	<div itemscope itemtype='http://schema.org/Organization'>
+			<meta itemprop='name' content="{{ site.title }}"/>
+	</div>
+	<div itemscope itemprop='address' itemtype='http://schema.org/PostalAddress'>
+			<meta content='{{ site.owner.city  }} Area' itemprop='streetAddress' />
+			<meta content='{{ site.owner.po  }}' itemprop='postOfficeBoxNumber' />
+			<meta content='{{ site.owner.city  }}' itemprop='addressLocality' />
+			<meta content='{{ site.owner.city  }}' itemprop='addressRegion' />
+			<meta content='{{ site.owner.country }}' itemprop='addressCountry' />
+	</div>
+</div>
 <div class="social-icons">
 	{% if site.owner.twitter %}<a href="http://twitter.com/{{ site.owner.twitter }}" title="{{ site.owner.name}} on Twitter" target="_blank"><i class="fa fa-twitter"></i></a>{% endif %}
 	<!-- {% if site.owner.facebook %}<a href="http://facebook.com/{{ site.owner.facebook }}" title="{{ site.owner.name}} on Facebook" target="_blank"><i class="fa fa&#45;facebook&#45;square fa&#45;2x"></i></a>{% endif %} -->
@@ -10,4 +40,4 @@
 	<!-- {% if site.owner.flickr %}<a href="http://www.flickr.com/photos/{{ site.owner.flickr }}" title="{{ site.owner.name}} on Flickr" target="_blank"><i class="fa fa&#45;flickr fa&#45;2x"></i></a>{% endif %} -->
 	{% if site.owner.github %}<a href="http://github.com/{{ site.owner.github }}" title="{{ site.owner.name}} on Github" target="_blank"><i class="fa fa-github"></i></a>{% endif %}
 	<!-- {% if site.owner.tumblr %}<a href="http://{{ site.owner.tumblr }}.tumblr.com" title="{{ site.owner.name}} on Tumblr" target="_blank"><i class="fa fa&#45;tumblr&#45;square fa&#45;2x"></i></a>{% endif %} -->
-</div><!-- /.social-icons -->
+</div><!-- /.social-icons --></div>
