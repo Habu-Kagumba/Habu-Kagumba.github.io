@@ -17,8 +17,8 @@
 	</a>
 	<div itemprop="name">{{ site.owner.name  }}</div>
 	<div itemprop='jobtitle'>{{ site.owner.job }}</div>
-	<div itemprop="email"><a href="mailto:{{ site.author.email }}">{{ site.author.email  }}</a></div>
-	<div itemprop="telephone"><a href="tel:+{{ site.owner.tel  }}">+{{ site.owner.tel  }}</a></div>
+	<div itemprop="email" style="margin-top:.75em"><p><a href="mailto:{{ site.author.email }}"><i class="fa fa-envelope"></i>&nbsp;{{ site.author.email  }}</a></p></div>
+	<div itemprop="telephone"><p><a href="tel:+{{ site.owner.tel  }}"><i class="fa fa-phone"></i>&nbsp;+{{ site.owner.tel  }}</a></p></div>
 	<meta itemprop='description' content="{{ site.owner.desc }}">
 	<div itemscope itemtype='http://schema.org/Organization'>
 			<meta itemprop='name' content="{{ site.title }}"/>
