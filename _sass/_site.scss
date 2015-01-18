@@ -312,6 +312,7 @@ body {
 				border-radius: 100%;
 			}
 			.social-icons {
+				margin-top: 20px;
 				a {
 					padding: 4px 8px;
 					font-size: 20px;
@@ -352,8 +353,8 @@ body {
         cursor: pointer;
         outline: none;
         position: fixed;
-        top: 1em;
-        left: 1em;
+        top: 20px;
+        left: 20px;
 		z-index: $z-index-backdrop + 1;
 		@include transition($swift-ease-out);
         svg{
