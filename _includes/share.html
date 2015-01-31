@@ -1,0 +1,29 @@
+<div class="share_me">
+
+
+<!-- <span class="social&#45;share&#45;twitter"> -->
+<!--   <a href="https://twitter.com/intent/tweet?hashtags={{ page.tags | join: ',' | remove: ' ' }}&#38;amp;text={{ page.title | escape | replace:' ','%20' }}&#38;amp;url={{ site.url }}{{ page.url }}&#38;amp;via={{ site.owner.twitter }}" title="Share on Twitter" itemprop="Twitter" target="_blank"><i class="fa fa&#45;twitter&#45;square"></i> Tweet</a> -->
+<!-- </span> -->
+<a class="twitter-share-button"
+   href="https://twitter.com/share"
+   data-url="{{ site.url }}{{ page.url }}"
+   data-via="{{ site.owner.twitter }}"
+   data-text="{{ page.title }}"
+   data-hashtags="{{ page.tags | join: ',' | remove: ' ' }}"
+  data-count="horizontal">
+Tweet
+</a>
+<script>
+window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+</script>
+
+<a class="g-plus" data-action="share" data-annotation="bubble"></a>
+    <script>
+      window.___gcfg = {
+        lang: 'en-US',
+        parsetags: 'onload'
+      };
+    </script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+</div>

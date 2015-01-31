@@ -1,0 +1,25 @@
+---
+layout: page
+title: Blog
+logo: true
+tit: Code scribblings
+---
+
+{% include header-blog.html %}
+
+<div class='archive'>
+    <div class='post'>
+        <h1>Recent Posts</h1>
+        {% for post in site.posts %}
+             <div>
+                <a href="{{ post.url }}"><h4>{{ post.title }}</h4></a><small>{{ post.date | date_to_string }}</small>
+                <p>
+                {{ post.excerpt }}
+                <p>
+                <hr/>
+            </div>
+        {% endfor %}
+        <div class='pagination'>
+        </div>
+    </div>
+</div>

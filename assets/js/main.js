@@ -92,18 +92,23 @@
 
 	function bimateleAnims() {
 		//bt logo svg
-		var btLogo = Snap('#bima_logo'),
-			b_t = btLogo.select('#b'),
-			t_b = btLogo.select('#t');
+		var bima_ze_logo = document.querySelector('bima_logo');
 
-		// animations
-		var bimaAdmin = new TimelineLite({paused:true});
-		bimaAdmin.add(TweenLite.to(bima, 5, {backgroundPosition:"bottom", ease:Power4.easeInOut}));
+		if (bima_ze_logo){
+			var btLogo = Snap('#bima_logo'),
+				b_t = btLogo.select('#b'),
+				t_b = btLogo.select('#t');
+		}
 
-		var bimaShow = new TimelineLite({paused:true});
-		bimaShow.add(TweenLite.from(bima, 2, {left:'100%', ease:Power4.easeInOut}));
 
 		if (bima){
+			// animations
+			var bimaAdmin = new TimelineLite({paused:true});
+			bimaAdmin.add(TweenLite.to(bima, 5, {backgroundPosition:"bottom", ease:Power4.easeInOut}));
+
+			var bimaShow = new TimelineLite({paused:true});
+			bimaShow.add(TweenLite.from(bima, 2, {left:'100%', ease:Power4.easeInOut}));
+
 			var scaleIn = new Waypoint({
 				element: bima,
 				handler: function(direction){

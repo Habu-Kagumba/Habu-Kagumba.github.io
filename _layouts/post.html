@@ -1,25 +1,26 @@
 ---
-layout: default
+layout: page
+logo: false
+tit: Code scribblings
+comments: true
 ---
 
+{% include header-blog.html %}
 <article class="post">
   <h1 class="post-title">{{ page.title }}</h1>
-  <time datetime="{{ page.date | date_to_xmlschema }}" class="page-date">{{ page.date | date_to_string }}</time>
-  {{ content }}
+    {% include share.html %}
+    {{ content }}
+	{% include share.html %}
+    <!-- Follow me -->
+    <div class='follow'>
+        If you've liked this post please consider following me.
+<a class="twitter-follow-button"
+    href="https://twitter.com/{{ site.owner.twitter }}"
+  data-show-count="false"
+  data-lang="en">
+  Follow @{{ site.owner.twitter }}
+</a>
+<script>window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));</script>
+    </div>
+	{% include disqus_comments.html %}
 </article>
-
-<aside class="related">
-  <h2>Related Posts</h2>
-  <ul class="related-posts">
-    {% for post in site.related_posts limit:3 %}
-      <li>
-        <h3>
-          <a href="{{ site.baseurl }}{{ post.url }}">
-            {{ post.title }}
-            <small><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time></small>
-          </a>
-        </h3>
-      </li>
-    {% endfor %}
-  </ul>
-</aside>

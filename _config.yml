@@ -9,12 +9,16 @@ title:            HS - Develop & Design
 tagline:          Develop + Design
 description:      Develop + Design web apps, mobile apps & graphic design (logos, illustrations, icons)
 defaultimg:       default_img.png
-url:              http://hs-dev-design.com
+# highlighter:      pygments
+markdown:         redcarpet
+pagination:       1
+paginate_path:    "blog/pg:num/"
+url:              http://www.hs-dev-design.com
 logo: 			  logo.svg
 baseurl:          /
 author:
   name:           Herbert Kagumba
-  url:            http://hs-dev-design.com
+  url:            http://www.hs-dev-design.com
   email:          hs@hs-dev-design.com
 
 # Jekyll configuration
@@ -34,6 +38,7 @@ owner:
   tel: 254727114286
   twitter: HabuKagumba
   github: Habu-Kagumba
+  facebook_id: 1374429249534174
   google:
     plus: herbertkagumba
     analytics:
@@ -42,7 +47,7 @@ owner:
     ad-slot:
   bing-verify:
   avatar: me.svg
-disqus_shortname:
+disqus_shortname: hsdevdesign
 
 #gems
 gems:

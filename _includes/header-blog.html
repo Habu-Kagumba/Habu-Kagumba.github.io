@@ -1,0 +1,24 @@
+<header class="hero_blog">
+	<div class="hero-inner_blog">
+		{% if page.logo == true %}
+		<div class='hero-logo_blog'>
+			<a href="{{ site.url }}" class="hero-logo">
+				<img class="img_sticky" src="{{ site.baseurl }}public/assets/img/logo.svg" alt="HS - Develop &amp; Design Logo">
+			</a>
+		</div>
+		<div class="hero-copy_blog">
+			<h3>{ {{ page.tit }} }</h3>
+		</div>
+		{% else %}
+		<div class="hero-copy_blog">
+			<h3>{ {{ page.tit }} }</h3>
+		</div>
+		<div class="hero-copy-tit_blog">
+			<h3>{{ page.title }}</h3>
+			<small>
+				<i>{{ page.date | date_to_string}}</i>
+			</small>
+		</div>
+		{% endif %}
+	</div>
+</header>

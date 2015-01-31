@@ -2,8 +2,9 @@
 <div class="org">
 		<div itemscope itemtype="http://schema.org/Organization">
 			<a href='{{ site.url  }}' itemprop='logo'>
-				<img src='{{ site.baseurl  }}public/assets/img/logo.svg' alt='{{ site.title  }}' />
+				<img src='{{ site.url  }}/public/assets/img/logo.svg' alt='{{ site.title  }}' />
 			</a>
+            <meta itemprop='logo'content='{{site.url}}/public/assets/img/logo.png' />
 			<meta itemprop="url" content="{{ site.url }}">
 			<meta itemprop="name" content='{{ site.title  }}'>
 			<meta itemprop="description" content='{{ site.description  }}'>
@@ -13,7 +14,7 @@
 <div class='me'>
 <div itemscope itemtype="http://schema.org/Person">
 	<a itemprop="url" href="{{ site.url  }}">
-		<img src='{{ site.baseurl  }}public/assets/img/me.svg' alt='{{ site.owner.name  }}' />
+		<img src='{{ site.url }}/public/assets/img/me.svg' alt='{{ site.owner.name  }}' />
 	</a>
 	<div itemprop="name">{{ site.owner.name  }}</div>
 	<div itemprop='jobtitle'>{{ site.owner.job }}</div>

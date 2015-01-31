@@ -3,10 +3,10 @@
 navigation:
   - text: Home
     url: /
-  - text: Work
-    url: /work/
-  # - text: Blog
-  #   url: /blog/
+  # - text: Work
+  #   url: /work/
+  - text: Blog
+    url: /blog/
   # - text: Projects
   #   url: /projects/
   # - text: Contact
