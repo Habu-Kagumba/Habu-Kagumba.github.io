@@ -100,4 +100,4 @@ To send the mail using mailgun there are 3 options - the template (e.g. transact
 grunt send --template=transactional.html --sender=jane@doe.com --recipient=john@doe.com --subject="This is a subject"
 ```
 
-The final repo is [here](https://github.com/hs-devevelop-design/html_email).
+The final repo is [here](https://github.com/hs-develop-design/html_email).
