@@ -70,7 +70,7 @@ gem install sass
 Clone the repo to your machine to get started.
 
 ```bash
-git clone https://github.com/hs-develop-design/html_email.git
+git clone https://github.com/Habu-Kagumba/html_email.git
 ```
 
 Run <code class="post-code">npm install</code> at the root of the directory to install the various plugins used.
@@ -100,4 +100,4 @@ To send the mail using mailgun there are 3 options - the template (e.g. transact
 grunt send --template=transactional.html --sender=jane@doe.com --recipient=john@doe.com --subject="This is a subject"
 ```
 
-The final repo is [here](https://github.com/hs-develop-design/html_email).
+The final repo is [here](https://github.com/Habu-Kagumba/html_email).
