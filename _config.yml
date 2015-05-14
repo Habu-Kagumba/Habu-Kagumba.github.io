@@ -13,12 +13,12 @@ defaultimg:       default_img.png
 markdown:         redcarpet
 pagination:       1
 paginate_path:    "blog/pg:num/"
-url:              http://www.hs-dev-design.com
+url:              http://habu-kagumba.github.io/
 logo: 			  logo.svg
 baseurl:          /
 author:
   name:           Herbert Kagumba
-  url:            http://www.hs-dev-design.com
+  url:            http://habu-kagumba.github.io/
   email:          hs@hs-dev-design.com
 
 # Jekyll configuration
