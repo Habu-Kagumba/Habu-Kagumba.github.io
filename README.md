@@ -1,4 +1,4 @@
 ![HS - Develop & Design logo]
-(http://hs-dev-design.com/public/assets/img/logo.svg)
+(https://raw.githubusercontent.com/Habu-Kagumba/Habu-Kagumba.github.io/master/public/assets/img/logo.svg)
 
 
