@@ -2,7 +2,7 @@ timezone: Africa/Nairobi
 
 # Permalinks
 permalink:        pretty
-relative_permalinks: true
+# relative_permalinks: true
 
 # Setup
 title:            HS - Develop & Design
