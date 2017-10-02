@@ -13,12 +13,12 @@ defaultimg:       default_img.png
 markdown:         kramdown
 pagination:       1
 paginate_path:    'blog/pg:num/'
-url:              http://habu-kagumba.github.io/
-logo: 			  logo.svg
+url:              https://habu-kagumba.github.io/
+logo: 			      logo.svg
 baseurl:          /
 author:
   name:           Herbert Kagumba
-  url:            http://habu-kagumba.github.io/
+  url:            https://habu-kagumba.github.io/
   email:          habukagumba@gmail.com
 
 # Jekyll configuration
