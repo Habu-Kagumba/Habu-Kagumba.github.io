@@ -10,9 +10,9 @@ tagline:          Develop + Design
 description:      Develop + Design web apps, mobile apps & graphic design (logos, illustrations, icons)
 defaultimg:       default_img.png
 # highlighter:      pygments
-markdown:         redcarpet
+markdown:         kramdown
 pagination:       1
-paginate_path:    "blog/pg:num/"
+paginate_path:    'blog/pg:num/'
 url:              http://habu-kagumba.github.io/
 logo: 			  logo.svg
 baseurl:          /
@@ -25,7 +25,7 @@ author:
 sass:
   sass_dir: _sass
   style: compressed
-exclude: [".sass-cache", "assets/js/vendor", "assets/img", "assets/css/vendor", "bower_components", "node_modules"]
+exclude: ['.sass-cache', 'assets/js/vendor', 'assets/img', 'assets/css/vendor', 'bower_components', 'node_modules']
 owner:
   name: Herbert Kagumba
   job: Front-End & Back-End Development

@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'bitters'
+gem 'bourbon'
+gem 'font-awesome-sass'
 gem 'github-pages'
-gem "bourbon"
-gem "neat"
-gem "bitters"
-gem "font-awesome-sass"
-gem 'jekyll-sitemap'
 gem 'html-proofer'
+gem 'jekyll-sitemap'
+gem 'neat'
